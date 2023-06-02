@@ -1,0 +1,28 @@
+
+.SearchBarContainer {
+  margin: 0 22px;
+}
+
+.SearchBarContainer button {
+  background-color: #f96e4d;
+  border: 0;
+  padding: 11px;
+  border-radius: 10px;
+  color: #fff;
+  cursor: pointer;
+  font-weight: 800;
+  width: 100px;
+  margin-right: 6px;
+}
+
+.SearchBarContainer input {
+  border: 1px solid #f96e4d;
+  padding: 11px;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-right: 12px;
+}
+
+.SearchBarContainer input:focus{
+  outline: none;
+}
