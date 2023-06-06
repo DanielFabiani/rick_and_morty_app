@@ -2,11 +2,12 @@ import { useState } from "react";
 import styles from './SearchBar.module.css'
 
 const SearchBar = (props) =>{
-
-   const [id, setId] = useState(''); //?Importa y crea un estado local llamado id. Debe inicializarse como un string vacío.
-
-   const handleChange = (event) =>{ //? función handleChange de modo que, cada vez que el usuario escriba algo en el input, este se guarde en el estado local id.
-      setId(event.target.value);//? .target le decimos a quien va a ejecutar, a donde esta apuntado
+//?Importa y crea un estado local llamado id. Debe inicializarse como un string vacío.
+   const [id, setId] = useState(''); 
+   
+   const handleChange = (event) =>{ //? cada vez que el usuario escriba algo en el input, este se guarde en el estado local id.
+   //? .target le decimos a quien va a ejecutar, a donde esta apuntado
+      setId(event.target.value);
    }
    
    let getRandomId = () => {

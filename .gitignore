@@ -23,4 +23,5 @@ yarn-debug.log*
 yarn-error.log*
 
 Readme's HW/
+.vscode/
 rick_and_morty_app.code-workspace

@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { keyframes } from 'styled-components'
 import logo from "../assets/rickAndMortyLogo.png";
 import SearchBar from './SearchBar/SearchBar.jsx';
-import { NavLink, useLocation } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 //* Inicio estilos --------------------------------
 
@@ -65,14 +65,8 @@ import { NavLink, useLocation } from 'react-router-dom';
   //* Fin estilos ------------------------------------------------
 
 const Nav = (props) => {
-  //? useLocation devuelve un objeto, tiene la propiedad pathname que devuelve la ruta donde estamos
-  //? si la ruta donde estamos es igual a '/' retorna null, no muestra el componente ya que frena la función
-  const location = useLocation(); 
-  /* if (location.pathname === '/') {
-    return null;
-  } */
 
-  return location.pathname === '/' ? null : (
+  return (
     <NavContainer>
 
       <LogoContainer>
@@ -87,6 +81,9 @@ const Nav = (props) => {
       <LinksContainer>
         <button>
           <NavLink to="/home">Home</NavLink>
+        </button>
+        <button>
+          <NavLink to="/favorites">Favorites</NavLink>
         </button>
         <button>
           <NavLink to="/about">About me</NavLink>

@@ -1,5 +1,5 @@
 //*Componente contenedor de todas las Card
-import Card from './Card';
+import Card from './Card/Card';
 import styled from 'styled-components';
 
 	//* Inicio estilos
