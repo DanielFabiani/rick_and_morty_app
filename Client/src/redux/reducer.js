@@ -16,7 +16,7 @@ const reducer = (state = initialState, action) => {
       }
     }
     case REMOVE_FAV: {
-      const filteredCharacters = state.myFavorites.filter(character => character.id !== action.payload)
+      const filteredCharacters = state.myFavorites.filter(character => character.id !== Number(action.payload))
       return {
         ...state,
         myFavorites: filteredCharacters
@@ -37,7 +37,7 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         myFavorites:
-          action.payload === 'Ascendente'
+          action.payload === 'A'
           ? orderCharacterCopy.sort((a, b) => a.id - b.id)
           : orderCharacterCopy.sort((a, b) => b.id - a.id)
       }

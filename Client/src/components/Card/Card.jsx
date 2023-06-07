@@ -76,11 +76,13 @@ const Card = (props) => {
     });
   }, [myFavorites]);
 
+  //const location =useLocation();
 
   return (
     <MainContainer>
       <CardImg>
         <img src={props.image} alt="{props.name}" />
+        {/* {location.pathname !== '/favorites' && <button onClick={props.onClose}>X</button>} */}
         <button onClick={props.onClose}>X</button>
       </CardImg>
 

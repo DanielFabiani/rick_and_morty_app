@@ -1,4 +1,4 @@
-import { connect, useDispatch } from "react-redux";
+import { connect, useDispatch, useSelector } from "react-redux";
 import Card from "../../components/Card/Card";
 import { filterCards, orderCards, removeFav } from "../../redux/actions/actions";
 import { useState } from "react";
@@ -7,9 +7,10 @@ import { useState } from "react";
 
 const Favorites = (props) => {
 
-  const { myFavorites, removeFav } = props;
+  const { removeFav } = props;
+  const favorites = useSelector(state => state.myFavorites)
 
-  // eslint-disable-next-line no-unused-vars
+
   const [aux, setAux] = useState(false);
 
   const onClose = (id) => { 
@@ -21,7 +22,7 @@ const Favorites = (props) => {
   const handleOrder = (event)=> {
     const order = event.target.value;
     dispatch(orderCards(order));
-    setAux(true);
+    setAux(!aux);
   }
 
   const handleFilter = (event)=> {
@@ -32,8 +33,8 @@ const Favorites = (props) => {
   return (
     <div>
       <select onChange={handleOrder}>
-        <option value="Ascendente">Ascendente</option>
-        <option value="Descendente">Descendente</option>
+        <option value="A">Ascendente</option>
+        <option value="D">Descendente</option>
       </select>
       <select onChange={handleFilter}>
         <option value="Male">Male</option>
@@ -43,7 +44,7 @@ const Favorites = (props) => {
         <option value="allCharacters">All Characters</option>
       </select>
       {
-        myFavorites.map((favorite) => {
+        favorites.map((favorite) => {
           return (
             <Card 
                 key={favorite.id}

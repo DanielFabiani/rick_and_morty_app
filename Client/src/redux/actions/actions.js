@@ -22,9 +22,9 @@ export const filterCards = (genders) => {
   }
 };
 
-export const orderCards = (orden) => {
+export const orderCards =  (order) => {
   return {
     type: ORDER_CARDS,
-    payload: orden
+    payload: order
   }
 }
