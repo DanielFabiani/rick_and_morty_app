@@ -24,9 +24,18 @@ const MainContainer = styled.article`
 const CardImg = styled.div`
   margin: 0;
   padding: 0;
+  position: relative;
   > img {
     border-radius: 12px 0 0 12px;
     height: 100%;
+  }
+  > button {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    background-color: rgb(60, 62, 68, 0.6);
+    border-radius: 6px;
+    cursor: pointer;
   }
 `;
 

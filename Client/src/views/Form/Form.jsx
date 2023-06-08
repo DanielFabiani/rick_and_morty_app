@@ -21,15 +21,14 @@ const Form = (props) => {
 
   //? función que nos permite reflejar el texto ingresado de los inputs en el estado local
   const handleChange = (event) => {
-    //? la propiedad la saco del input que dispara el evento
+    // la propiedad la saco del input que dispara el evento
     const property = event.target.name;
-    //? el value lo tomo del input lo qu introduzca el usuario
+    // el value lo tomo del input lo qu introduzca el usuario
     const value = event.target.value;
-    //? seteo el estado con los valore obtenidos
+    // seteo el estado con los valore obtenidos
     setUserData({...userData, [property]: value});
-    // llamamos a la función que valida los errores para pasarle los parámetros 
-    //validate({...userData, [property]: value}, errors, setErrors )
-    //? setamos los errores validados en la función externa 
+
+    // setamos los errores validados en la función externa 
     setErrors(
       validation({...userData, [property]: value})
     )
