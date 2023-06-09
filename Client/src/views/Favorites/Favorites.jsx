@@ -2,20 +2,20 @@ import { connect, useDispatch, useSelector } from "react-redux";
 import Card from "../../components/Card/Card";
 import { filterCards, orderCards, removeFav } from "../../redux/actions/actions";
 import { useState } from "react";
-
+import styles from "./Favorites.module.css";
 
 
 const Favorites = (props) => {
 
-  const { removeFav } = props;
+  //const { removeFav } = props;
   const favorites = useSelector(state => state.myFavorites)
 
 
   const [aux, setAux] = useState(false);
 
-  const onClose = (id) => { 
+  /* const onClose = (id) => { 
       removeFav(id)
-    }
+    } */
 
   const dispatch = useDispatch();
 
@@ -43,6 +43,7 @@ const Favorites = (props) => {
         <option value="unknown">Unknown</option>
         <option value="allCharacters">All Characters</option>
       </select>
+      <section className={styles.formContainerFav}>
       {
         favorites.map((favorite) => {
           return (
@@ -55,11 +56,12 @@ const Favorites = (props) => {
                 gender={favorite.gender}
                 origin={favorite.origin}
                 image={favorite.image}
-                onClose={() => onClose(favorite.id)}
+                /* onClose={() => props.onClose(favorite.id)} */
               />
           )
         })
       }
+      </section>
     </div>
   )
 };

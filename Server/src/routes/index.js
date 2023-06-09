@@ -1,7 +1,7 @@
 // para crear las rutas importamos todos los controladores
 
 const express = require('express');
-const  router = express.Router();
+const router = express.Router();
 const getCharById = require('../controllers/getCharById');
 const login = require('../controllers/login');
 const { postFav, deleteFav } = require('../controllers/handleFavorites');

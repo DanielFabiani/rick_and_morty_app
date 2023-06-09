@@ -1,5 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import styled from "styled-components";
 import { addFav, removeFav } from "../../redux/actions/actions";
 import { connect } from "react-redux";
@@ -8,8 +8,7 @@ import { useEffect, useState } from "react";
 //* Estilos ----------------------------------------------------------------
 const MainContainer = styled.article`
   width: 550px;
-  height: 220px;
-
+  height: 230px;
   display: flex;
   flex-direction: row;
   /* overflow: hidden; */
@@ -33,9 +32,13 @@ const CardImg = styled.div`
     position: absolute;
     left: 10px;
     top: 10px;
-    background-color: rgb(60, 62, 68, 0.6);
-    border-radius: 6px;
+    background-color: rgb(244, 244, 244, 0.6);
+    border-radius: 3px;
+    border: none;
     cursor: pointer;
+  }
+  > button:hover {
+    background-color: rgb(249, 110, 77, 0.6)
   }
 `;
 
@@ -45,6 +48,8 @@ const CardInfo = styled.div`
   text-align: center;
   align-items: center;
   color: #fff;
+  padding: 0;
+  position: relative;
 
   > a {
     cursor: pointer;
@@ -52,12 +57,23 @@ const CardInfo = styled.div`
     text-align: center;
   }
   > a h2 {
+    margin-top: 8px;
     color: #84d7c8;
-    padding: 8px;
-    margin-bottom: 0;
+    padding: 6px;
+    margin-bottom: 12px;
+  }
+  > a h2:hover {
+    color: #f96e4d;
   }
   > p {
     margin-top: 2px;
+  }
+  > button {
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
   }
 `;
 //* Fin Estilos ----------------------------------------------------------------
@@ -85,14 +101,13 @@ const Card = (props) => {
     });
   }, [myFavorites]);
 
-  //const location =useLocation();
-
+  const location = useLocation()
   return (
     <MainContainer>
       <CardImg>
         <img src={props.image} alt="{props.name}" />
-        {/* {location.pathname !== '/favorites' && <button onClick={props.onClose}>X</button>} */}
-        <button onClick={props.onClose}>X</button>
+      {location.pathname !== '/favorites' && <button onClick={props.onClose}>X</button>}
+        {/* <button onClick={props.onClose}>X</button> */}
       </CardImg>
 
       <CardInfo>

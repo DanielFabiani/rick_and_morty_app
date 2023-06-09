@@ -8,6 +8,7 @@ import {
 const initialState = {
   myFavorites: [],
   allCharacters: [],
+  errors: false
 };
 
 const reducer = (state = initialState, action) => {
@@ -16,15 +17,23 @@ const reducer = (state = initialState, action) => {
       return { 
         ...state, 
         myFavorites: action.payload, 
-        allCharacters: action.payload 
+        allCharacters: action.payload,
+        errors: false
       };
     }
     case REMOVE_FAV: {
       return { 
         ...state, 
-        myFavorites: action.payload 
+        myFavorites: action.payload,
+        allCharacters: action.payload,
+        errors: false
       };
     }
+    case 'ERROR':
+      return { 
+        ...state, 
+        errors: action.payload
+      }
     case FILTER_CARDS: {
       const filteredCharacter = state.allCharacters.filter(
         (character) => character.gender === action.payload
