@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import styles from './Form.module.css';
 import logoLanding from './rick-and-morty.png'
+import arrow from './wired-gradient-arrow-10.gif'
 //import validate from "./validation";
 import validation from "./validation";
 
@@ -23,7 +24,7 @@ const Form = (props) => {
   const handleChange = (event) => {
     // la propiedad la saco del input que dispara el evento
     const property = event.target.name;
-    // el value lo tomo del input lo qu introduzca el usuario
+    // el value viene del input que introduce el usuario
     const value = event.target.value;
     // seteo el estado con los valore obtenidos
     setUserData({...userData, [property]: value});
@@ -40,7 +41,8 @@ const Form = (props) => {
   }
 
   return (
-    /* //? el método onSubmit es de los Form y se ejecuta con el click del boton */
+    <>
+      {/* //? el método onSubmit es de los Form y se ejecuta con el click del boton */}
     <form className={styles.formContainer} onSubmit={handleSubmit}>
       <img src={logoLanding} alt="logo" />
       <div>
@@ -64,6 +66,22 @@ const Form = (props) => {
       </div>
       <button type="submit">Submit</button>
     </form>
+    <p className={styles.pForm} >Here's a clue: </p>
+
+    <section className={styles.sectionContainer} >
+      <div>
+        <p>Email </p>
+        <p>Password </p>
+      </div>
+      <div>
+        <img src={arrow} alt="right arrow" />
+      </div>
+      <div>
+        <p>johndoe@email.com</p>
+        <p>123456</p>
+      </div>
+    </section>
+    </>
   )
 };
 

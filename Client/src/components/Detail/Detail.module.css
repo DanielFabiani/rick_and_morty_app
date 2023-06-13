@@ -1,0 +1,28 @@
+.mainContainer {
+  height: 100%;
+  display: inline-block;
+  width: fit-content;
+  margin-top: 26px;
+  padding: 32px;
+  border-radius: 50px;
+  background-image: linear-gradient(to right top, #5a886d, #417671, #3c626b, #3f4e5a, #3b3c43);
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px;
+}
+
+.imgContainer {
+  display: inline-block;
+}
+
+.imgContainer img {
+    border-radius: 25%;
+  }
+
+.infoContainer h1 {
+  color: #84d7c8;
+}
+
+.infoContainer p {
+  color: #fff;
+  font-size: 18px;
+}
+

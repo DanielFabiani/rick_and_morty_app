@@ -5,7 +5,7 @@ import axios from "axios";
 import Nav from "./components/Nav.jsx";
 import About from "./views/About";
 import Cards from "./components/Cards.jsx";
-import Detail from "./components/Detail";
+import Detail from "./components/Detail/Detail";
 import NotFound from "./views/NotFound/NotFound";
 import Form from "./views/Form/Form";
 import Favorites from "./views/Favorites/Favorites";
@@ -58,6 +58,10 @@ function App() {
       const URL = "http://localhost:3001/rickandmorty/login/";
     //                                        response
       const { access } = (await axios(URL + `?email=${email}&password=${password}`)).data
+
+      // Almacenar el estado de inicio de sesión en el almacenamiento local
+      localStorage.setItem('access', access);
+
       setAccess(access);
       access && navigate("/home");
     } catch (error) {
@@ -65,14 +69,36 @@ function App() {
     }
   }
 
+  // Función para realizar el cierre de sesión
+  function logout() {
+    // Eliminar el estado de inicio de sesión del almacenamiento local
+    localStorage.removeItem(access);
+    //setAccess(false);
+    // Redirigir al usuario a la página de inicio de sesión
+    navigate('/');
+  }
+
+  useEffect(() => {
+    // Verificar el estado de inicio de sesión en el almacenamiento local
+    const storedAccess = localStorage.getItem('access');
+    
+    if (storedAccess) {
+      // Si hay un estado de inicio de sesión almacenado, establecerlo en el estado
+      setAccess(storedAccess);
+    } else {
+      // Si no hay un estado de inicio de sesión almacenado, redirigir al usuario a la página de inicio de sesión
+      navigate('/');
+    }
+  }, [navigate])
+/* 
   useEffect(() => {
     !access && navigate("/");
-  }, [access, navigate]);
-
+  }, [access, navigate])
+ */
   const location = useLocation();
   return (
     <div className="App">
-      {location.pathname !== "/" && <Nav onSearch={onSearch} />}
+      {location.pathname !== "/" && <Nav onSearch={onSearch} logout={logout}/>}
       <Routes>
         <Route path="/" element={<Form login={login} />} />
         <Route

@@ -32,17 +32,20 @@ const Favorites = (props) => {
 
   return (
     <div>
-      <select onChange={handleOrder}>
-        <option value="A">Ascendente</option>
-        <option value="D">Descendente</option>
-      </select>
-      <select onChange={handleFilter}>
-        <option value="Male">Male</option>
-        <option value="Female">Female</option>
-        <option value="Genderless">Genderless</option>
-        <option value="unknown">Unknown</option>
-        <option value="allCharacters">All Characters</option>
-      </select>
+      <div className={styles.filterContainer}>
+        <select onChange={handleOrder}>
+          <option value="A">Ascendente</option>
+          <option value="D">Descendente</option>
+        </select>
+        <select onChange={handleFilter}>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+          <option value="Genderless">Genderless</option>
+          <option value="unknown">Unknown</option>
+          <option value="allCharacters">All Characters</option>
+        </select>
+      </div>
+      
       <section className={styles.formContainerFav}>
       {
         favorites.map((favorite) => {

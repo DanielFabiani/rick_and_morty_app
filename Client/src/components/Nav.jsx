@@ -88,6 +88,9 @@ const Nav = (props) => {
         <button>
           <NavLink to="/about">About me</NavLink>
         </button>
+        <button>
+          <NavLink to="/" logout={props.logout}>Logout</NavLink>
+        </button>
       </LinksContainer>
 
     </NavContainer>
