@@ -4,6 +4,8 @@ const router = require("./routes/index");
 const morgan = require("morgan");
 const server = express();
 const PORT = 3001;
+// Importo instancia de 'sequelize'
+const { conn } = require('./DB_connection');
 
 server.use((req, res, next) => {
   res.header("Access-Control-Allow-Origin", "*");
@@ -21,9 +23,15 @@ server.use(morgan('dev'))
 //? este middleware crea los path de las rutas que se soliciten y ejecuta la función creada en el archivo router.js
 server.use('/rickandmorty', router)
 
-server.listen(PORT, () => {
-  console.log("Server listening on port: " + PORT);
-});
+//! una vez terminado el desarrollo cambiar a {force: false}
+conn.sync({force: true})
+  .then(() => {
+    server.listen(PORT, () => {
+      console.log("Server listening on port: " + PORT);
+    });
+  })
+  .catch((error) => { console.log(error.message);})
+
 
 // Servidor js Vanilla
 /* 
