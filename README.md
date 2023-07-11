@@ -1,6 +1,6 @@
 # **Rick and Morty App**
 
-¡Bienvenido/a a la aplicación Rick and Morty! Esta aplicación es el resultado de mi proyecto como estudiante de desarrollo web full stack, donde he aplicado las tecnologías del stack MERN (MongoDB, Express, React, Node.js). La aplicación está inspirada en la popular serie de televisión "Rick and Morty".
+¡Bienvenido/a a la aplicación Rick and Morty! Esta aplicación es el resultado de mi proyecto como estudiante de desarrollo web full stack, donde he aplicado las tecnologías del stack SERN (Sequelize, Express, React, Node.js). La aplicación está inspirada en la popular serie de televisión "Rick and Morty".
 
 ## **Descripción del proyecto**
 
