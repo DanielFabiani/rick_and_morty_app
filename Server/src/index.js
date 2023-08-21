@@ -9,8 +9,8 @@ const { PORT } = process.env;
 const { conn } = require('./DB_connection');
 
 server.use((req, res, next) => {
-  /* res.header("Access-Control-Allow-Origin", "*"); */
-  res.header("Access-Control-Allow-Origin", "https://rick-and-morty-app-lime.vercel.app/");
+  //res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Origin", "https://rick-and-morty-app-lime.vercel.app");
   res.header("Access-Control-Allow-Credentials", "true");
   res.header(
     "Access-Control-Allow-Headers",
