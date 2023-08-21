@@ -60,6 +60,12 @@
   margin: 8px
 }
 
+.formContainer button:hover {
+  background-color: #fff;
+  color: #f96e4d;
+  border: solid 1.5px #f96e4d ;
+}
+
 .pForm  {
   margin: 40px 0 0 0;
   color: #fff;
