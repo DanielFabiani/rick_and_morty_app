@@ -1,7 +1,6 @@
 import "./App.css";
 import { useEffect, useState } from "react";
 import { Route, Routes, useLocation, useNavigate } from "react-router-dom";
-import axios from "axios";
 import Nav from "./components/Nav.jsx";
 import About from "./views/About";
 import Cards from "./components/Cards.jsx";
@@ -9,6 +8,10 @@ import Detail from "./components/Detail/Detail";
 import NotFound from "./views/NotFound/NotFound";
 import Form from "./views/Form/Form";
 import Favorites from "./views/Favorites/Favorites";
+
+import axios from "axios";
+axios.defaults.baseURL = "http://localhost:3001/";
+
 
 function App() {
   //? estado del componente
@@ -22,7 +25,7 @@ function App() {
         return;
         // en caso q la condición se cumpla detengo la función con el return.
       }
-      const { data } = await axios.get(`http://localhost:3001/rickandmorty/character/${id}`)
+      const { data } = await axios.get(`/rickandmorty/character/${id}`)
       if (data.name) {
         // compruebo si existe el personaje que estoy solicitando, el .name puede ser cualquier propiedad, comprueba que exista el objeto con la información
         const existingCharacter = characters.find(
@@ -55,7 +58,7 @@ function App() {
   async function login(userData) {
     try {
       const { email, password } = userData;
-      const URL = "http://localhost:3001/rickandmorty/login/";
+      const URL = "/rickandmorty/login/";
     //                                        response
       const { access } = (await axios(URL + `?email=${email}&password=${password}`)).data
 

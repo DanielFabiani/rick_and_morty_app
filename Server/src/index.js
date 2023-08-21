@@ -3,12 +3,14 @@ const express = require("express");
 const router = require("./routes/index");
 const morgan = require("morgan");
 const server = express();
-const PORT = 3001;
+require('dotenv').config()
+const { PORT } = process.env;
 // Importo instancia de 'sequelize'
 const { conn } = require('./DB_connection');
 
 server.use((req, res, next) => {
-  res.header("Access-Control-Allow-Origin", "*");
+  /* res.header("Access-Control-Allow-Origin", "*"); */
+  res.header("Access-Control-Allow-Origin", "https://rick-and-morty-app-lime.vercel.app/");
   res.header("Access-Control-Allow-Credentials", "true");
   res.header(
     "Access-Control-Allow-Headers",
@@ -26,7 +28,7 @@ server.use('/rickandmorty', router)
 //! una vez terminado el desarrollo cambiar a {force: false}
 conn.sync({force: false})
   .then(() => {
-    server.listen(PORT, () => {
+    server.listen( PORT, () => {
       console.log("Server listening on port: " + PORT);
     });
   })
