@@ -11,7 +11,8 @@ import Favorites from "./views/Favorites/Favorites";
 
 import axios from "axios";
 //axios.defaults.baseURL = "http://localhost:3001/";
-axios.defaults.baseURL = "rickandmortyapp-production-6854.up.railway.app/";
+axios.defaults.baseURL = "https://rickandmortyapp-production-6854.up.railway.app/";
+
 
 
 function App() {
