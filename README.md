@@ -2,6 +2,8 @@
 
 ¡Bienvenido/a a la aplicación Rick and Morty! Esta aplicación es el resultado de mi proyecto como estudiante de desarrollo web full stack, donde he aplicado las tecnologías del stack SERN (Sequelize, Express, React, Node.js). La aplicación está inspirada en la serie de televisión "Rick and Morty".
 
+- **[Rick and Morty App](https://rick-and-morty-app-lime.vercel.app/)**
+
 ## **Descripción del proyecto**
 
 La aplicación Rick and Morty es una plataforma que permite a los usuarios explorar información sobre los personajes y ubicaciones de la serie. Los fanáticos de Rick and Morty podrán navegar a través de una interfaz intuitiva y descubrir datos interesantes sobre sus personajes favoritos.
