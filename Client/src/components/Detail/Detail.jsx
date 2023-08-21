@@ -1,10 +1,8 @@
 import axios from 'axios';
-//import styled from 'styled-components';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import styles from "./Detail.module.css";
 
-//? Component
 const Detail = () => {
 
   //* Hooks -------------------------------------------------------------------
@@ -28,7 +26,6 @@ const Detail = () => {
 
   return(
     <div className={styles.mainContainer}>
-      {/* //? al cambiar el estado renderiza nuevamente */}
       { //* Código JS Condicional Ternario
         character.name ? ( //? si character.name ? existe muestra esto
           <>

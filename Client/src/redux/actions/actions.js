@@ -12,29 +12,29 @@ export const addFav = (character) => {
         payload: data,
       });
     } catch (error) {
-        return dispatch({
-          type: 'ERROR',
-          payload: error.message
-        })
+      return dispatch({
+        type: "ERROR",
+        payload: error.message,
+      });
     }
-  }
+  };
 };
 
 export const removeFav = (id) => {
   return async (dispatch) => {
     try {
-      const { data } = await axios.delete(`${ENDPOINT}/${id}`)
+      const { data } = await axios.delete(`${ENDPOINT}/${id}`);
       return dispatch({
         type: REMOVE_FAV,
         payload: data,
       });
     } catch (error) {
-        return dispatch({
-          type: 'ERROR',
-          payload: error.message
-        })
+      return dispatch({
+        type: "ERROR",
+        payload: error.message,
+      });
     }
-  }
+  };
 };
 
 export const filterCards = (genders) => {

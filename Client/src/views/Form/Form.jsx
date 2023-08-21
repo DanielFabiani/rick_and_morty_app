@@ -4,7 +4,7 @@ import styles from './Form.module.css';
 import logoLanding from './rick-and-morty.png'
 import arrow from './wired-gradient-arrow-10.gif'
 //import validate from "./validation";
-import validation from "./validation";
+import validation from "./validation"; //const errors= {...}
 
 
 const Form = (props) => {

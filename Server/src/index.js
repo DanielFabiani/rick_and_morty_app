@@ -24,7 +24,7 @@ server.use(morgan('dev'))
 server.use('/rickandmorty', router)
 
 //! una vez terminado el desarrollo cambiar a {force: false}
-conn.sync({force: true})
+conn.sync({force: false})
   .then(() => {
     server.listen(PORT, () => {
       console.log("Server listening on port: " + PORT);
