@@ -61,7 +61,7 @@ function App() {
       const { email, password } = userData;
       const URL = "/rickandmorty/login/";
     //                                        response
-      const { access } = (await axios(URL + `?email=${email}&password=${password}`)).data
+      const { access } = (await axios(`${URL}?email=${email}&password=${password}`)).data
 
       // Almacenar el estado de inicio de sesión en el almacenamiento local
       localStorage.setItem('access', access);
